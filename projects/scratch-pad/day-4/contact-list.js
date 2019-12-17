@@ -53,21 +53,34 @@ function makeContactList() {
         length: function() {
             return contacts.length;
         },
+        
+        // takes an object, adds it to contacts, then returns contacts
         addContact: function(contact) {
             return contacts.push(contact);
         },
+        
+        // takes a full name string, returns the object of the contact name
         findContact: function(fullName) {
+            
+            // splits the name into first and last
             const name = fullName.split(' ');
             const first = name[0];
             const last = name[1];
             
+            // searches to match the first and last name to the objects
             for(let i = 0; i < contacts.length; i++){
                 if(contacts[i].nameFirst === first && contacts[i].nameLast === last){
+                    
+                    // returns contact if matched
                     return contacts[i];
                 }
             }
+            
+            // returns undefined if no contacts were matched to the search
             return undefined;
         },
+        
+        // finds the contact via their id # and removes that specific contact
         removeContact: function(contact) {
             for(let i = 0; i < contacts.length; i++){
                 if(contact.id === contacts[i].id){
@@ -75,13 +88,24 @@ function makeContactList() {
                 }
             }
         },
+        
+        // prints all contact names
         printAllContactNames(){
+            
+            // an array to store the names
             const allContacts = [];
             
+            // loops through the array of contacts
             for(let i = 0; i < contacts.length; i++){
+                
+                // formats the contact name to a first and last name as one string
                 let contactName = contacts[i].nameFirst + ' ' + contacts[i].nameLast;
+                
+                // pushes full name to allContacts array
                 allContacts.push(contactName);
             }
+            
+            // returns all contacts as a string replacing the `,` with the newline character
             return  allContacts.toString().replace(/,/g, '\n');
         }
     };
