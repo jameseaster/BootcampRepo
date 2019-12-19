@@ -16,7 +16,7 @@
 function search(animals, name){
     
     // Looks through the animals Array, and returns the animal’s Object if an animal with that name exists.
-    for(let i = 0; i < animals.length-1; i++){
+    for(let i = 0; i < animals.length; i++){
         if(animals[i]['name'] === name){
             return animals[i];
         }
@@ -30,18 +30,14 @@ function search(animals, name){
 // Step 2 - Replace //////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-
-// START HERE <------------ //
-
-
-
-// Write a function called replace with a signature of replace(animals, name, replacement) { //... } that:
-// Takes 3 parameters, an Array of animals, a name of an animal on which to perform a search, and an Object that represents the replacement animal.
-
-
 function replace(animals, name, replacement){
-// If an animal with that name exists within the animals Array, replace it’s entire Object with the replacement Object.
-    
+
+    // Looks through the animals Array, and replace `name` with `replacement`
+    for(let i = 0; i < animals.length; i++){
+        if(animals[i]['name'] === name){
+            animals.splice(animals[i], 1, replacement);
+        }
+    }
 }
 
 // Otherwise do nothing.
@@ -53,12 +49,38 @@ function replace(animals, name, replacement){
 // Step 3 - Remove ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-
+function remove(animals, name){
+    
+        // Looks through the animals Array, and removes `name`
+    for(let i = 0; i < animals.length; i++){
+        if(animals[i]['name'] === name){
+            animals.splice(animals[i], 1);
+        }
+    }
+}
 
 //////////////////////////////////////////////////////////////////////
 // Step 4 - Create ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
+function add(animals, animal) {
+    
+    //animal must have a name and a species
+    if(animal.name.length > 0 && animal.species.length > 0){
+        
+        //loops through animals array to compare objects name with animal
+        for(let i = 0; i < animals.length; i++){
+            
+            //if an object exists with the same name, don't add animal
+            if(animals[i].name === animal.name){
+                return;
+            }
+        }
+        
+        //if animal has a species and a unique name, add animal to animals
+        animals.push(animal);
+    }
+}
 
 
 /**
