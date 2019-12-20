@@ -3,41 +3,15 @@
 * 
 * 0. Operators are used in JS to assign values, compare values, 
 *    perform arithmetic operations, and more.
-* 
-* 1. Assignment operator (=) - used to assign values to variables.
-*    It can also be used with an arithmetic operator to perform
-*    arithmetic and assign in the same step
 *
-* 2. Arithmetic operators - used to perform arithmetic between 
-*    variables and/or values. These include: + (addition), -
-*    (subtraction), * (multiplication), / (division), % (modulus),
-*    ++ (increment), -- (decrement)
-*
-* 3. Comparison operators - used in logical statements to determine
-*    equality or difference between variables and/or values. These
-*    include: == (equal to), === (strictly equal to), != (not equal
-*    to), !== (strictly not equal to), > (greater than), < (less
-*    than), >= (greater than or equal to), <= (less than or equal 
-*    to)
-* 
-* 4. Logical operators - used to determine logic between variables
-*    and/or values. This set of operators include: && (and), ||
-*    (or), ! (not)
-* 
-* 5. Unary operators (!, typeOf, -) - A unary operator is one that
-*    takes a single operand/argument and performs an operation.
-*    Some of these include: ! (not), typeOf (type of), - (negation)
-* 
-* 6. Ternary operator (a ? b : c) - This operator is often used as
-*    a shortcut for an if statement. It takes three operands: 1.
-*    a condition, followed by a question mark (?), 2. an expression
-*    to execute if the condition is truthy, followed by a colon (:),
-*    3. an expression to execute if the condition is falsy.
-* 
 */
 
-
 // 1. Assignment operators //
+/* 
+* Assignment operator (=) - used to assign values to variables.
+* It can also be used with an arithmetic operator to perform
+* arithmetic and assign in the same step
+*/
      // the assignment operator assigns the value 30 to age
     var age = 30;
     
@@ -54,6 +28,12 @@
 
 
 // 2. Arithmetic operators //
+/*
+* Arithmetic operators - used to perform arithmetic between 
+* variables and/or values. These include: + (addition), -
+* (subtraction), * (multiplication), / (division), % (modulus),
+* ++ (increment), -- (decrement)
+*/
     var x = 10;
     var y = 30;
     
@@ -73,6 +53,13 @@
     
 
 // 3. Comparison operators //
+/*
+* Comparison operators - used in logical statements to determine
+* equality or difference between variables and/or values. These
+* include: == (equal to), === (strictly equal to), != (not equal
+* to), !== (strictly not equal to), > (greater than), < (less
+* than), >= (greater than or equal to), <= (less than or equal to)
+*/
     var a = 'apple';
     
     //comparing two strings, yielding a boolean value
@@ -91,6 +78,11 @@
     
 
 // 4. Logical operators //
+/* 
+* Logical operators - used to determine logic between variables
+* and/or values. This set of operators include: && (and), ||
+* (or), ! (not)
+*/
 
     // Example #1
     var weather = 'sunny';
@@ -132,6 +124,11 @@
     
 
 // 5. Unary operators (!, typeOf, -) //
+/* 
+* Unary operators (!, typeOf, -) - A unary operator is one that
+* takes a single operand/argument and performs an operation.
+* Some of these include: ! (not), typeOf (type of), - (negation)
+*/
     /*
     *These operators perform an operation on a single operand
     */
@@ -156,12 +153,19 @@
 
 
 // 6. Ternary operator (a ? b : c) //
-    /*
-    * canDrive accepts an age as an argument and then determines
-    * if someone is old enough to drive via a boolean value. It
-    * does this by using a ternary operator instead of an if
-    * statement. This makes for a cleaner line of code.
-    */ 
+/*
+* Ternary operator (a ? b : c) - This operator is often used as
+* a shortcut for an if statement. It takes three operands: 1.
+* a condition, followed by a question mark (?), 2. an expression
+* to execute if the condition is truthy, followed by a colon (:),
+* 3. an expression to execute if the condition is falsy.
+*/
+    
+    // canDrive accepts an age as an argument and then determines
+    // if someone is old enough to drive via a boolean value. It
+    // does this by using a ternary operator instead of an if
+    // statement. This makes for a cleaner line of code.
+     
     function canDrive(age){
         return (age >= 16 ? true : false);
     }

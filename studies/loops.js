@@ -1,39 +1,23 @@
 /**
 * LOOPS:
 * 
-* 1. There are three main types of loops that we've studied so far
+* 0. There are three main types of loops that we've studied so far
 *    in JS: while, for, and for-in loops.
-* 
-*    while: these loops iterate through a block of code as long as
-*    their condition statement is true. They will run forever if 
-*    their conditional statement is not met. This is usually done
-*    by declaring an incrementer variable outside of the while loop.
-*    Then at the end of the while loop's block of code, incrementing
-*    the incrementer so that it moves itself closer to the 
-*    conditional statement.
-* 
-*    for: loops that execute a block of code a specific number of
-*    times. A for loop has three statements within it: the initialize,
-*    the condition, and the incrementer. In the initialize part holds
-*    the variable used to iterate throughout your block of code. The
-*    condition is the code that has to be met in order for the loop
-*    to run. The incrementer changes iterator so that it gets
-*    closer to the conditional statement (preventing an infinite 
-*    loop).
-* 
-*    for-in: similar to for loops these use a 'key' to iterate over
-*    an object. First you have your declared variable 'key'
-*    representing the keys you are going to iterate over. Then the 
-*    keyword 'in', and then the name of the object. For-in loops
-*    will look at each key of the object and execute the code
-*    within its curly braces.
 *
 */
-
 
 // 1. Anatomy of while, for, and for-in loops //
 
   //while loops //
+  /*
+  * while: these loops iterate through a block of code as long as
+  * their condition statement is true. They will run forever if 
+  * their conditional statement is not met. This is usually done
+  * by declaring an incrementer variable outside of the while loop.
+  * Then at the end of the while loop's block of code, incrementing
+  * the incrementer so that it moves itself closer to the 
+  * conditional statement.
+  */
     var myArray = [1,2,3,4,5];
 
     //while loop incrementer, declared outside while loop
@@ -48,6 +32,15 @@
     
     
   //for loops //
+  /* 
+  * for: loops that execute a block of code a specific number of
+  * times. A for loop has three statements within it: the initialize,
+  * the condition, and the incrementer. In the initialize part holds
+  * the variable used to iterate throughout your block of code. The
+  * condition is the code that has to be met in order for the loop
+  * to run. The incrementer changes iterator so that it gets
+  * closer to the conditional statement (preventing an infinite loop).
+  */
     var myArray2 = [5,6,7,8,9];
     
     //for(initialize, condition, incrementer)
@@ -61,6 +54,14 @@
     
     
   //for-in loops //
+  /* 
+  * for-in: similar to for loops these use a 'key' to iterate over
+  * an object. First you have your declared variable 'key'
+  * representing the keys you are going to iterate over. Then the 
+  * keyword 'in', and then the name of the object. For-in loops
+  * will look at each key of the object and execute the code
+  * within its curly braces.
+  */
     var favObj = {color: 'blue', food: 'pizza', drink: 'coffee'};
     
     //iterates over every key in favObj
