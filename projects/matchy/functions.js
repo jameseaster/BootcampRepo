@@ -15,8 +15,9 @@
 
 function search(animals, name){
     
-    // Looks through the animals Array, and returns the animal’s Object if an animal with that name exists.
+    // Looks through the animals array
     for(let i = 0; i < animals.length; i++){
+        // returns the animal's Object if an animal with that name exists
         if(animals[i]['name'] === name){
             return animals[i];
         }
@@ -32,17 +33,14 @@ function search(animals, name){
 
 function replace(animals, name, replacement){
 
-    // Looks through the animals Array, and replace `name` with `replacement`
+    // Loops through the animals Array
     for(let i = 0; i < animals.length; i++){
+        // replaces `name` with `replacement` via splice method
         if(animals[i]['name'] === name){
             animals.splice(animals[i], 1, replacement);
         }
     }
 }
-
-// Otherwise do nothing.
-
-// Test it on the website.
 
 
 //////////////////////////////////////////////////////////////////////
@@ -50,9 +48,9 @@ function replace(animals, name, replacement){
 //////////////////////////////////////////////////////////////////////
 
 function remove(animals, name){
-    
-        // Looks through the animals Array, and removes `name`
+    // Looks through the animals array
     for(let i = 0; i < animals.length; i++){
+        // Removes `name` from array
         if(animals[i]['name'] === name){
             animals.splice(animals[i], 1);
         }
