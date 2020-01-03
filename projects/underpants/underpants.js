@@ -369,7 +369,27 @@ _.pluck = function(array, prop){
 *   _.every([2,4,6], function(e){return e % 2 === 0}) -> true
 *   _.every([1,2,3], function(e){return e % 2 === 0}) -> false
 */
+_.every = function(collection, func){
+    // initialize answer with the value of true
+    let answer = true;
+    
+    // if there is no function given, test if every element in collection is true
+    if(!func){
+        _.each(collection, (e, i, c) =>{if(e === false) answer = false});
+        // return answer
+        return answer;
+    }
 
+    // testArray is the values of collection past through func
+    const testArray = _.map(collection, (e, i, c) => func(e, i, c));
+    
+    // if each any values of testArray are false, answer is assigned false
+    _.each(testArray, (e, i, c) => {if(e === false) answer = false});
+
+    // return answer
+    return answer;
+
+}
 
 /** _.some
 * Arguments:
@@ -391,7 +411,26 @@ _.pluck = function(array, prop){
 *   _.some([1,3,5], function(e){return e % 2 === 0}) -> false
 *   _.some([1,2,3], function(e){return e % 2 === 0}) -> true
 */
+_.some = function(collection, func){
+    // initialize answer with the value of false
+    let answer = false;
+    
+    // if there is no function given, test if any element in collection is true
+    if(!func){
+        _.each(collection, (e, i, c) =>{if(e === true) answer = true});
+        // return answer
+        return answer;
+    }
 
+    // testArray is the values of collection past through func
+    const testArray = _.map(collection, (e, i, c) => func(e, i, c));
+    
+    // if each any values of testArray are true, answer is assigned true
+    _.each(testArray, (e, i, c) => {if(e === true) answer = true});
+
+    // return answer
+    return answer;
+};
 
 /** _.reduce
 * Arguments:
@@ -411,6 +450,19 @@ _.pluck = function(array, prop){
 * Examples:
 *   _.reduce([1,2,3], function(previousSum, currentValue, currentIndex){ return previousSum + currentValue }, 0) -> 6
 */
+_.reduce = function(array, func, seed){
+    // loop through the array and assign seed to the first index of array
+    // if seed is undefined
+    for(let i = 0; i < array.length; i++){
+        if(seed === undefined) {seed = array[0];
+        
+        // if seed is defined call function on seed, element, and index
+        // assign function return to seed (accumulator)        
+        } else {seed = func(seed, array[i], i)}
+    }
+    // return seed (accumulator)
+    return seed;
+};
 
 
 /** _.extend
@@ -427,6 +479,11 @@ _.pluck = function(array, prop){
 *   _.extend(data, {b:"two"}); -> data now equals {a:"one",b:"two"}
 *   _.extend(data, {a:"two"}); -> data now equals {a:"two"}
 */
+_.extend = function(obj1, obj2){
+    // Return obj1 which is the first argument, after assigning it the properties of
+    // the following object arguments
+    return _.reduce(arguments, (obj1, nextObj) => obj1 = Object.assign(obj1, nextObj));
+};
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
