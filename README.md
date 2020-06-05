@@ -1,2 +1,2 @@
-# jameseaster.github.io
-Operation Spark Bootcamp
+# Bootcamp Repo
+Operation Spark
